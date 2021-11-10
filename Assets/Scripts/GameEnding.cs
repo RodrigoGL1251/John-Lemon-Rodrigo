@@ -57,6 +57,10 @@ public class GameEnding : MonoBehaviour
 
     void EndLevel(CanvasGroup imageCanvasGroupe, bool doRestar, AudioSource audioSource)
     {
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<AudioSource>().enabled = false;
+        player.GetComponent<Animator>().enabled = false;
+
         if (!m_HasAudioPlayed)
         {
             audioSource.Play();
